@@ -1,0 +1,13 @@
+{
+    "builds":[{
+        "src":"CMMS/wsgi.py",
+        "use":"@vercel/python",
+        "config":{"maxLambdaSize":"15mb","runtime":"python3.5"}
+    }],
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest": "CMMS/wsgi.py"
+        }
+    ]
+}
