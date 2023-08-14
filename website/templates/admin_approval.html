@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+ {%block content %}
+
+ <title>Admin approve</title>
+ <h1>admin approval</h1>
+ 
+    <form method="POST">
+        {%csrf_token%}
+        {{form}}
+        <button type="submit">add</button>
+    </form>
+   
+    
+{%endblock content%}   

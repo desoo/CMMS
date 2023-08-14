@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+ {%block content %}
+    <!DOCTYPE html>
+    <html>
+    <style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+    <body>
+
+    <h2>A basic HTML table</h2>
+
+    <table style="width:100%">
+      <tr>
+        <th>name</th>
+        <th>phone</th>
+        <th>email</th>
+        <th>date joined</th>
+        <th>created by</th>
+      </tr>
+      <tr>
+        {%for x in form%}
+                    <tbody>
+                        <tr>
+                            
+                            <td><a href="#">{{x.first_name}}</a></td>
+                            <td>{{x.last_name}}</td>
+                            <td>{{x.email}}</td>
+                            <td>{{x.created_by}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+      </tr>
+      
+    </table>
+
+    <p><a href="{%url 'user-registration'%}">
+        <button type="button">
+            Create user
+        </button>
+
+    </body>
+    </html>
+{%endblock content%}
